@@ -12,3 +12,5 @@ You should see "random_pack" under "Available". Click the triangle to move it to
 Click "Done". Click "Create New World". 
 
 When you break a block, kill a mob, open a generated chest, etc., the items will be different than you expect. 
+
+Inspired by SethBling's Loot Table Randomizer (https://www.youtube.com/watch?v=3JEXAZOrykQ&t=1s).
