@@ -45,5 +45,6 @@ for path in glob.glob('random_pack/**/*.json', recursive=True):
     file.close()
     file = open(path, 'w')
     file.write(contents)
+    file.close()
 
 
