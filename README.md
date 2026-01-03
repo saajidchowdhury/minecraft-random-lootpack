@@ -3,7 +3,7 @@ Python script which generates Minecraft datapack where all the loot tables are r
 
 ## Instructions
 
-First download all of these files. Then run `p.py`. This should generate a bunch of folders, including the folder "random_pack". 
+First download all of these files. Then use Python to run the script `p.py`. This should generate a bunch of folders, including the folder "random_pack". 
 
 Open Minecraft in version 1.21.11, in Singleplayer click "Create New World", click "More" on the top right, click "Data Packs".
 
