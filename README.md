@@ -1,7 +1,9 @@
 # minecraft-random-lootpack
 Python script which generates Minecraft datapack where all the loot tables are randomly permuted. 
 
-First download all of these files. Then run `p.py`. This should generate a bunch of folders, including the folder "random_pack". 
+## Instructions
+
+First download all of these files. Then run `q.py`. This should generate a bunch of folders, including the folder "random_pack". 
 
 Open Minecraft in version 1.21.11, in Singleplayer click "Create New World", click "More" on the top right, click "Data Packs".
 
@@ -12,5 +14,17 @@ You should see "random_pack" under "Available". Click the triangle to move it to
 Click "Done". Click "Create New World". 
 
 When you break a block, kill a mob, open a generated chest, etc., the items will be different than you expect. 
+
+## Special Features
+
+Some of the default loot table items are given to you only under certain conditions, such as "`minecraft:killed_by_player`". 
+
+For example, you can only get a Blaze rod if you yourself kill a Blaze. 
+
+This random lootpack script removes all those conditions. 
+
+So, no matter which block ends up with the Blaze lootpack, breaking that block is guaranteed to give you a Blaze rod. 
+
+Since blaze rods are essential for making Eyes of Ender to beat the game, you can try to beat the game with this lootpack; it's a lot of fun.
 
 Inspired by SethBling's Loot Table Randomizer (https://www.youtube.com/watch?v=3JEXAZOrykQ&t=1s).
