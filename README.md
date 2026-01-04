@@ -6,7 +6,9 @@ Breaking a dirt block might give you zombie flesh, killing a zombie might give y
 
 ## Instructions
 
-First download all of these files. Then use Python to run the script `p.py`. This should generate a bunch of folders, including the folder "random_pack". 
+First download all of these files: click the Green "Code" button, click "Download ZIP", decompress the downloaded zip file. 
+
+Then use Python to run the script `main.py`. This should generate a bunch of folders, including the folder "random_pack". 
 
 Open Minecraft in version 1.21.11, in Singleplayer click "Create New World", click "More" on the top right, click "Data Packs".
 
