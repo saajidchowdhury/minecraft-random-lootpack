@@ -1,5 +1,8 @@
 # minecraft-random-lootpack
+
 Python script which generates Minecraft datapack where all the loot tables are randomly permuted. 
+
+Breaking a dirt block might give you zombie flesh, killing a zombie might give you end city chest loot; the possibilities are endless!
 
 ## Instructions
 
@@ -26,5 +29,7 @@ This random lootpack script removes all those conditions.
 So, no matter which block ends up with the Blaze lootpack, breaking that block is guaranteed to give you a Blaze rod. 
 
 Since blaze rods are essential for making Eyes of Ender to beat the game, you can try to beat the game with this lootpack; it's a lot of fun.
+
+## Acknowledgements
 
 Inspired by SethBling's Loot Table Randomizer (https://www.youtube.com/watch?v=3JEXAZOrykQ&t=1s).

@@ -1,25 +1,24 @@
-#!/usr/bin/env python
-"""\
-This script creates the directory random_pack, which is a Minecraft datapack
+"""
+This script creates the directory random_pack, which is our custom Minecraft 1.21.11 datapack
 where all the loot tables have been randomly permuted.
 """
-import glob
-import random
 import shutil
+import glob
 import json
+import random
 
+
+#Given loot_table json substructure x, f(x) returns x with all conditions removed
+#and all children under alternatives listed directly as entries
 def f(x):
     if isinstance(x, list):
         ans = []
-        for i in range(len(x)):
-            if isinstance(x[i], dict):
-                if "children" in x[i]:
-                    for e in f(x[i]["children"]):
-                        ans.append(e)
-                else:
-                    ans.append(f(x[i]))
+        for xitem in x:
+            if isinstance(xitem, dict) and "children" in xitem:
+                for child in f(xitem["children"]):
+                    ans.append(child)
             else:
-                ans.append(f(x[i]))
+                ans.append(f(xitem))
     elif isinstance(x, dict): #assume that children is caught above, so x doesn't contain children
         ans = {}
         for key,value in x.items():
@@ -30,14 +29,7 @@ def f(x):
     return ans
 
 
-#https://stackoverflow.com/questions/1883980/find-the-nth-occurrence-of-substring-in-a-string
-def find_nth(haystack: str, needle: str, n: int) -> int:
-    start = haystack.find(needle)
-    while start >= 0 and n > 1:
-        start = haystack.find(needle, start+len(needle))
-        n -= 1
-    return start
-
+#Given the original Minecraft 1.21.11 loot_tables, extracts and applies f to all the pools
 shutil.unpack_archive("loot_table_original.zip")
 pools = []
 for path in glob.glob("loot_table_original/**/*.json", recursive=True):
@@ -47,6 +39,8 @@ for path in glob.glob("loot_table_original/**/*.json", recursive=True):
         pools.append(f(j)["pools"])
     file.close()
 
+
+#Shuffles the pools and assigns them to all loot_table json files in our custom datapack, random_pack
 shutil.unpack_archive("random_pack.zip")
 random.shuffle(pools)
 k = 0
@@ -60,5 +54,8 @@ for path in glob.glob("random_pack/**/*.json", recursive=True):
     file = open(path, 'w')
     file.write(json.dumps(j, indent=2))
     file.close()
+
+
+print("Done.")
 
 
